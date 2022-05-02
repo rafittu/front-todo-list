@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as requests from '../services/requests';
+import AddTask from '../components/AddTask';
 
 function Todo() {
   const { id } = useParams();
@@ -20,9 +21,23 @@ function Todo() {
     getTodos();
   }, []);
 
+  const addTodo = async (task) => {
+    const todo = {
+      userId: Number(id),
+      title: task,
+      complete: 'false',
+    };
+
+    const { response, data } = await requests.createTodo(todo);
+    if (response.status !== 201) return response;
+    return setUserTodo([...userTodo, data]);
+  };
+
   return (
     <div>
       <h1>Tasks to do!</h1>
+
+      <AddTask addTodo={addTodo} />
 
       <span>
         {
@@ -33,9 +48,8 @@ function Todo() {
               {todo.title}
             </li>
           ))
-      }
+        }
       </span>
-
     </div>
   );
 }
