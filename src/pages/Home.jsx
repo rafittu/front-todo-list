@@ -25,7 +25,7 @@ function Home() {
           !isLoading
             ? 'Carregando...'
             : users.map((user) => (
-              <li key={user.id}>
+              <li key={user.id} data-testid="user-list">
                 <a href={`/${user.id}`}>{user.name}</a>
               </li>
             ))
