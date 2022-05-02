@@ -20,10 +20,23 @@ function Todo() {
     getTodos();
   }, []);
 
-  console.log(userTodo, isLoading);
-
   return (
-    <h1>Todo</h1>
+    <div>
+      <h1>Tasks to do!</h1>
+
+      <span>
+        {
+        !isLoading
+          ? 'Carregando...'
+          : userTodo.map((todo) => (
+            <li key={todo.id} data-testid="todo-list">
+              {todo.title}
+            </li>
+          ))
+      }
+      </span>
+
+    </div>
   );
 }
 
