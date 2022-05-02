@@ -9,4 +9,9 @@ describe('Testing home page', () => {
     const todoTitle = screen.getByText(/todo list/i);
     expect(todoTitle).toBeInTheDocument();
   });
+
+  it('Users list is appearing', () => {
+    const usersList = screen.getByTestId('user-list');
+    expect(usersList).toBeInTheDocument();
+  });
 });
