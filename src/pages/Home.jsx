@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import * as requests from '../services/requests';
-import User from '../components/User';
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -26,7 +25,9 @@ function Home() {
           !isLoading
             ? 'Carregando...'
             : users.map((user) => (
-              <User id={user.id} key={user.id} name={user.name} />
+              <li key={user.id}>
+                <a href={`/${user.id}`}>{user.name}</a>
+              </li>
             ))
         }
       </span>
