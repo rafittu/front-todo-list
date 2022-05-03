@@ -16,18 +16,16 @@ function AddTask({ addTodo }) {
   };
 
   return (
-    <div>
-      <form>
-        <input
-          placeholder="Add a todo"
-          name="task"
-          value={newTask}
-          onChange={handleChange}
-        />
-        <button type="button" onClick={submitTodo}>Add task</button>
-        <hr />
-      </form>
-    </div>
+    <form>
+      <input
+        placeholder="Add a todo"
+        name="task"
+        value={newTask}
+        onChange={handleChange}
+      />
+      <button type="button" onClick={submitTodo}>Add task</button>
+      <hr />
+    </form>
   );
 }
 

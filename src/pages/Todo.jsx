@@ -35,21 +35,23 @@ function Todo() {
   };
 
   return (
-    <div>
+    <main>
       <h1>Tasks to do!</h1>
 
-      <div>
+      <section>
         <AddTask addTodo={addTodo} />
 
-        {
-        !isLoading
-          ? 'Carregando...'
-          : userTodo.map((todo) => (
-            <Tasks id={todo.id} key={todo.id} title={todo.title} />
-          ))
-        }
-      </div>
-    </div>
+        <ul>
+          {
+            !isLoading
+              ? 'Carregando...'
+              : userTodo.map((todo) => (
+                <Tasks id={todo.id} key={todo.id} title={todo.title} />
+              ))
+          }
+        </ul>
+      </section>
+    </main>
   );
 }
 
