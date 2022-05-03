@@ -33,6 +33,21 @@ export async function createTodo(todo) {
   return { response, data };
 }
 
+export async function updateTodo(todo) {
+  const { id, complete } = todo;
+
+  const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+    method: methods[2],
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      complete,
+    }),
+  });
+
+  const data = await response.json();
+  return { response, data };
+}
+
 export async function deleteTodo(id) {
   const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
     method: methods[3],
