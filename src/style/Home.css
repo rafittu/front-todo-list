@@ -1,9 +1,51 @@
 #user-page {
-  background-color: antiquewhite;
+  background-color: #EAF2CE;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+}
+
+header h1 {
+  font-family: Franklin Gothic Medium;
+  text-decoration: rgb(143, 168, 236) wavy underline;
+  color: #53A62D;
+  font-size: 70px;
+  top: 27px;
+  padding: 45px;
+}
+
+section h3 {
+  text-decoration: rgb(113, 143, 226) wavy underline;
+  padding: 7px;
+}
+
+#users-list {
+  background-color: #9CD918;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style-type: none;
+  box-shadow: 3px 6px 40px #707365;
+  border-radius: 10px;
+  min-width: 400px;
+  min-height: 390px;
+}
+
+#user {
+  padding: 7px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: blue;
+  cursor: pointer;
+  font-weight: bold;
 }
