@@ -32,3 +32,11 @@ export async function createTodo(todo) {
   const data = await response.json();
   return { response, data };
 }
+
+export async function deleteTodo(id) {
+  const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+    method: methods[3],
+  });
+  const data = await response.json();
+  return { response, data };
+}

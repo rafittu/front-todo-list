@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as requests from '../services/requests';
+import Tasks from '../components/Tasks';
 import AddTask from '../components/AddTask';
 
 function Todo() {
@@ -33,24 +34,37 @@ function Todo() {
     return setUserTodo([...userTodo, data]);
   };
 
+  const deleteTodo = async (taskId) => {
+    const { response } = await requests.deleteTodo(taskId);
+    if (response.status !== 200) return response;
+    const todos = userTodo.filter((task) => task.id !== Number(taskId));
+
+    return setUserTodo(todos);
+  };
+
   return (
-    <div>
+    <main>
       <h1>Tasks to do!</h1>
 
-      <AddTask addTodo={addTodo} />
+      <section>
+        <AddTask addTodo={addTodo} />
 
-      <span>
-        {
-        !isLoading
-          ? 'Carregando...'
-          : userTodo.map((todo) => (
-            <li key={todo.id} data-testid="todo-list">
-              {todo.title}
-            </li>
-          ))
-        }
-      </span>
-    </div>
+        <ul>
+          {
+            !isLoading
+              ? 'Carregando...'
+              : userTodo.map((todo) => (
+                <Tasks
+                  id={todo.id}
+                  key={todo.id}
+                  title={todo.title}
+                  deleteTodo={deleteTodo}
+                />
+              ))
+          }
+        </ul>
+      </section>
+    </main>
   );
 }
 
