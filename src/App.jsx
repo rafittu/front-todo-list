@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Todo from './pages/Todo';
 
+import './style/App.css';
+
 function App() {
   return (
     <BrowserRouter>
