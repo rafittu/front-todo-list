@@ -17,20 +17,22 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>TODO LIST</h1>
+    <div id="user-page">
+      <header>
+        <h1>TODO LIST</h1>
+      </header>
 
-      <span>
+      <ul id="users-list">
         {
           !isLoading
-            ? 'Carregando...'
+            ? <p className="loading">Carregando...</p>
             : users.map((user) => (
-              <li key={user.id} data-testid="user-list">
+              <li key={user.id} id="user" data-testid="user-list">
                 <a href={`/${user.id}`}>{user.name}</a>
               </li>
             ))
         }
-      </span>
+      </ul>
 
     </div>
   );
