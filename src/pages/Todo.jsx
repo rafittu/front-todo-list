@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as requests from '../services/requests';
+import Tasks from '../components/Tasks';
 import AddTask from '../components/AddTask';
 
 function Todo() {
@@ -37,19 +38,17 @@ function Todo() {
     <div>
       <h1>Tasks to do!</h1>
 
-      <AddTask addTodo={addTodo} />
+      <div>
+        <AddTask addTodo={addTodo} />
 
-      <span>
         {
         !isLoading
           ? 'Carregando...'
           : userTodo.map((todo) => (
-            <li key={todo.id} data-testid="todo-list">
-              {todo.title}
-            </li>
+            <Tasks id={todo.id} key={todo.id} title={todo.title} />
           ))
         }
-      </span>
+      </div>
     </div>
   );
 }
