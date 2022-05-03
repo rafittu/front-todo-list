@@ -13,9 +13,10 @@ function Tasks({
   };
 
   return (
-    <li id={id}>
-      <input type="checkbox" onClick={handleComplete} />
+    <li>
       {title}
+      <button type="button">doing</button>
+      <button type="button" onClick={handleComplete}>done</button>
       <button type="button" onClick={handleDelete}>delete</button>
     </li>
   );
