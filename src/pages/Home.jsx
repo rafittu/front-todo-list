@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import * as requests from '../services/requests';
 
+import '../style/Home.css';
+
 function Home() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState();
@@ -17,21 +19,25 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>TODO LIST</h1>
+    <div id="user-page">
+      <header>
+        <h1>TO DO</h1>
+      </header>
 
-      <span>
-        {
-          !isLoading
-            ? 'Carregando...'
-            : users.map((user) => (
-              <li key={user.id} data-testid="user-list">
-                <a href={`/${user.id}`}>{user.name}</a>
-              </li>
-            ))
-        }
-      </span>
-
+      <section>
+        <h3>Users list</h3>
+        <ul id="users-list">
+          {
+            !isLoading
+              ? <p className="loading">Carregando...</p>
+              : users.map((user) => (
+                <li key={user.id} id="user" data-testid="user-list">
+                  <a href={`/${user.id}`}>{user.name}</a>
+                </li>
+              ))
+          }
+        </ul>
+      </section>
     </div>
   );
 }
