@@ -34,6 +34,15 @@ function Todo() {
     return setUserTodo([...userTodo, data]);
   };
 
+  const deleteTodo = async (taskId) => {
+    const { response, data } = await requests.deleteTodo(taskId);
+    if (response.status !== 200) return response;
+
+    const todos = data.filter((task) => task.id !== Number(taskId));
+
+    return setUserTodo(todos);
+  };
+
   return (
     <main>
       <h1>Tasks to do!</h1>
@@ -46,7 +55,12 @@ function Todo() {
             !isLoading
               ? 'Carregando...'
               : userTodo.map((todo) => (
-                <Tasks id={todo.id} key={todo.id} title={todo.title} />
+                <Tasks
+                  id={todo.id}
+                  key={todo.id}
+                  title={todo.title}
+                  deleteTodo={deleteTodo}
+                />
               ))
           }
         </ul>
