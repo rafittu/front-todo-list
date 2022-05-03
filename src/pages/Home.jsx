@@ -21,21 +21,23 @@ function Home() {
   return (
     <div id="user-page">
       <header>
-        <h1>TODO LIST</h1>
+        <h1>TO DO</h1>
       </header>
 
-      <ul id="users-list">
-        {
-          !isLoading
-            ? <p className="loading">Carregando...</p>
-            : users.map((user) => (
-              <li key={user.id} id="user" data-testid="user-list">
-                <a href={`/${user.id}`}>{user.name}</a>
-              </li>
-            ))
-        }
-      </ul>
-
+      <section>
+        <h3>Users list</h3>
+        <ul id="users-list">
+          {
+            !isLoading
+              ? <p className="loading">Carregando...</p>
+              : users.map((user) => (
+                <li key={user.id} id="user" data-testid="user-list">
+                  <a href={`/${user.id}`}>{user.name}</a>
+                </li>
+              ))
+          }
+        </ul>
+      </section>
     </div>
   );
 }
