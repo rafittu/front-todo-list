@@ -14,25 +14,31 @@ Para o desenvolvimento do projeto foi utilizado:
 
 ### Começando
 
-1. Clone o repositorio
+1. Clone o repositorio:
 
 ```bash
 $ git clone git@github.com:rafittu/escolaMais-todo-list-frontend.git
 ```
 
-2. Inicie o React no terminal  
+2. Instale as dependências do projeto:
+
+```bash
+$ npm install
+```
+
+3. Inicie o React no terminal: 
 
 ```bash
 $ npm start
 ```
 
-3. A aplicação irá iniciar automaticamente no seu navegador padrão.
+4. A aplicação irá iniciar automaticamente no seu navegador padrão.
 
-4. Selecione um usuário padrão e crie suas tarefas!
+5. Selecione um usuário pré-cadastrado e crie suas tarefas!
 
 ##
 
-Para rodar os testes no terminal:
+Para rodar os testes da aplicação no terminal:
 
 ```bash
 $ npm test
