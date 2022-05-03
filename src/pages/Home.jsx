@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import * as requests from '../services/requests';
 
+import '../style/Home.css';
+
 function Home() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState();
