@@ -35,10 +35,9 @@ function Todo() {
   };
 
   const deleteTodo = async (taskId) => {
-    const { response, data } = await requests.deleteTodo(taskId);
+    const { response } = await requests.deleteTodo(taskId);
     if (response.status !== 200) return response;
-
-    const todos = data.filter((task) => task.id !== Number(taskId));
+    const todos = userTodo.filter((task) => task.id !== Number(taskId));
 
     return setUserTodo(todos);
   };
