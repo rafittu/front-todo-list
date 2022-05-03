@@ -6,8 +6,10 @@ import AddTask from '../components/AddTask';
 
 function Todo() {
   const { id } = useParams();
-  const [userTodo, setUserTodo] = useState([]);
+
   const [isLoading, setIsLoading] = useState();
+  const [userTodo, setUserTodo] = useState([]);
+  const [completedTodo, setCompletedTodo] = useState([]);
 
   useEffect(() => {
     const getTodos = async () => {
@@ -16,6 +18,7 @@ function Todo() {
 
       const todo = data.filter((task) => task.userId === Number(id));
       setUserTodo(todo);
+      setCompletedTodo(todo);
 
       return setIsLoading('false');
     };
@@ -32,6 +35,19 @@ function Todo() {
     const { response, data } = await requests.createTodo(todo);
     if (response.status !== 201) return response;
     return setUserTodo([...userTodo, data]);
+  };
+
+  const updateTodo = async (taskId) => {
+    const todo = {
+      id: taskId,
+      completed: 'true',
+    };
+
+    const { response, data } = await requests.updateTodo(todo);
+    if (response.status !== 200) return response;
+    const todos = completedTodo.filter((task) => task.completed);
+
+    return setCompletedTodo([...todos, data]);
   };
 
   const deleteTodo = async (taskId) => {
@@ -58,6 +74,7 @@ function Todo() {
                   id={todo.id}
                   key={todo.id}
                   title={todo.title}
+                  updateTodo={updateTodo}
                   deleteTodo={deleteTodo}
                 />
               ))
