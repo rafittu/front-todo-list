@@ -29,9 +29,11 @@ function Tasks({
   return (
     <li className="todo">
       {title}
-      <button type="button" id="btn-doing" onClick={handleStatus}>doing</button>
-      <button type="button" id="btn-done" onClick={handleStatus}>done</button>
-      <button type="button" id="btn-delete" onClick={handleDelete}>delete</button>
+      <span id="status-container">
+        <button type="button" id="btn-doing" onClick={handleStatus}>doing</button>
+        <button type="button" id="btn-done" onClick={handleStatus}>done</button>
+        <button type="button" id="btn-delete" onClick={handleDelete}>delete</button>
+      </span>
     </li>
   );
 }
