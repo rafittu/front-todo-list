@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import '../style/Todo.css';
+
 function AddTask({ addTodo }) {
   const [newTask, setNewTask] = useState('');
 
@@ -16,14 +18,15 @@ function AddTask({ addTodo }) {
   };
 
   return (
-    <form>
+    <form id="todo-form">
       <input
         placeholder="Add a todo"
         name="task"
+        id="input-todo"
         value={newTask}
         onChange={handleChange}
       />
-      <button type="button" onClick={submitTodo}>Add task</button>
+      <button type="button" id="btn-add-todo" onClick={submitTodo}>Add task</button>
       <hr />
     </form>
   );

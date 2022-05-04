@@ -4,6 +4,8 @@ import * as requests from '../services/requests';
 import Tasks from '../components/Tasks';
 import AddTask from '../components/AddTask';
 
+import '../style/Todo.css';
+
 function Todo() {
   const { id } = useParams();
 
@@ -59,13 +61,13 @@ function Todo() {
   };
 
   return (
-    <main>
+    <main id="todo-page">
       <h1>Tasks to do!</h1>
 
-      <section>
+      <section id="todo-body">
         <AddTask addTodo={addTodo} />
 
-        <ul>
+        <ul id="todo-list">
           {
             !isLoading
               ? 'Carregando...'
