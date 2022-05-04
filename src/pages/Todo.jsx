@@ -4,6 +4,8 @@ import * as requests from '../services/requests';
 import Tasks from '../components/Tasks';
 import AddTask from '../components/AddTask';
 
+import '../style/Todo.css';
+
 function Todo() {
   const { id } = useParams();
 

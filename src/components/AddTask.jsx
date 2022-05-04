@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import '../style/Todo.css';
+
 function AddTask({ addTodo }) {
   const [newTask, setNewTask] = useState('');
 

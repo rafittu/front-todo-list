@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../style/Todo.css';
+
 function Tasks({
   id, title, updateTodo, deleteTodo,
 }) {
