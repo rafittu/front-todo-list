@@ -59,13 +59,13 @@ function Todo() {
   };
 
   return (
-    <main>
+    <main id="todo-page">
       <h1>Tasks to do!</h1>
 
-      <section>
+      <section id="todo-body">
         <AddTask addTodo={addTodo} />
 
-        <ul>
+        <ul id="todo-list">
           {
             !isLoading
               ? 'Carregando...'
