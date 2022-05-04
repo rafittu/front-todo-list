@@ -1,0 +1,54 @@
+#todo-page {
+  background-color: #EAF2CE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+main h1 {
+  font-family: Franklin Gothic Medium;
+  color: #53A62D;
+  font-size: 70px;
+  top: 27px;
+  padding: 45px;
+}
+
+#todo-form {
+  margin-left: 45px;
+  width: 91%;
+  height: 70px;
+}
+
+#input-todo {
+  padding: 5px;
+  border-radius: 11px;
+}
+
+#btn-add-todo {
+  background-color: rgb(235, 233, 233);
+  border-radius: 18px;
+  margin: 11px;
+  padding: 7px;
+}
+
+#todo-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 27px;
+}
+
+.todo {
+  background-color: #23af07;
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+  padding: 27px;
+  margin: 11px;
+  width: 210px;
+  transition: all 0.3s ease-out;
+}
