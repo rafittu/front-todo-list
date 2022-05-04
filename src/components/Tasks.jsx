@@ -13,11 +13,11 @@ function Tasks({
   };
 
   return (
-    <li>
+    <li className="todo">
       {title}
-      <button type="button">doing</button>
-      <button type="button" onClick={handleComplete}>done</button>
-      <button type="button" onClick={handleDelete}>delete</button>
+      <button type="button" id="btn-doing">doing</button>
+      <button type="button" id="btn-done" onClick={handleComplete}>done</button>
+      <button type="button" id="btn-delete" onClick={handleDelete}>delete</button>
     </li>
   );
 }
