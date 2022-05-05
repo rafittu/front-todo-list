@@ -1,17 +1,28 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import App from '../App';
 
 describe('Testing home page', () => {
-  render(<App />);
   it('Todo page is rendering', () => {
-    const todoTitle = screen.getByText(/todo list/i);
+    render(<App />);
+    const todoTitle = screen.getByText(/to do/i);
     expect(todoTitle).toBeInTheDocument();
   });
 
   it('Users list is appearing', () => {
-    const usersList = screen.getByTestId('user-list');
+    render(<App />);
+    const usersList = screen.getByText(/users list/i);
     expect(usersList).toBeInTheDocument();
+  });
+
+  it('Users are on the list', async () => {
+    render(<App />);
+    await waitForElementToBeRemoved(
+      () => screen.getByText('Carregando...'),
+    );
+
+    const users = screen.getAllByTestId('user-list')[0];
+    expect(users).toBeInTheDocument();
   });
 });
