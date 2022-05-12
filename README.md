@@ -2,7 +2,7 @@
 
 ### Bem vindo ao repositório ToDo List!
 
-Frontend da aplicação ToDo List, que consiste em implantar uma solução de organização para os estudantes e colaboradores da <a href="https://escolamais.com/" rel="nofollow">Escola Mais</a>, garantindo assim um aumento na produtividade de suas tarefas diárias.
+Frontend da aplicação ToDo List, que consiste em implantar uma solução de organização para os estudantes e colaboradores da Escola Mais, garantindo assim um aumento na produtividade de suas tarefas diárias.
 
 ##
   
