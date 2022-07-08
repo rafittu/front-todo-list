@@ -1,8 +1,6 @@
-# Mockup Escola Mais
+# Bem vindo ao repositório ToDo List!
 
-### Bem vindo ao repositório ToDo List!
-
-Frontend da aplicação ToDo List, que consiste em implantar uma solução de organização para os estudantes e colaboradores da Escola Mais, garantindo assim um aumento na produtividade de suas tarefas diárias.
+Frontend da aplicação ToDo List, que consiste em implantar uma solução de organização para os estudantes e/ou colaboradores de uma determinada organização, garantindo assim um aumento na produtividade de suas tarefas diárias.
 
 ##
   
